@@ -31,14 +31,17 @@ param (
     [boolean]$CodeSign = $false
 
 )
+Write-Host "---- in BuildModules, step 1"
 if (($null -eq $RepoRoot) -or (0 -eq $RepoRoot.Length)) {
     $RepoRoot = Resolve-Path (Join-Path $PSScriptRoot '..' '..')
-
 }
 
+Write-Host "---- in BuildModules, step 2"
 $notModules = @('lib', 'shared', 'helpers')
 $coreTestModule = @('Compute', 'Network', 'Resources', 'Sql', 'Websites')
 $RepoArtifacts = Join-Path $RepoRoot "artifacts"
+
+Write-Host "---- in BuildModules, step 3"
 
 $csprojFiles = @()
 $testModule = @()
@@ -46,8 +49,12 @@ $toolDirectory = Join-Path $RepoRoot "tools"
 $sourceDirectory = Join-Path $RepoRoot "src"
 $generatedDirectory = Join-Path $RepoRoot "generated"
 
+Write-Host "---- in BuildModules, step 4"
+
 $BuildScriptsModulePath = Join-Path $toolDirectory 'BuildScripts' 'BuildScripts.psm1'
 Import-Module $BuildScriptsModulePath
+
+Write-Host "---- in BuildModules, step 5"
 
 if (-not (Test-Path $sourceDirectory)) {
     Write-Warning "Cannot find source directory: $sourceDirectory"
@@ -55,6 +62,8 @@ if (-not (Test-Path $sourceDirectory)) {
 elseif (-not (Test-Path $generatedDirectory)) {
     Write-Warning "Cannot find generated directory: $generatedDirectory"
 }
+
+Write-Host "---- in BuildModules, step 6"
 
 # Add Accounts to target module by default, this is to ensure accounts is always built when target/modified module parameter sets
 $TargetModule += 'Accounts'
@@ -122,30 +131,46 @@ switch ($PSCmdlet.ParameterSetName) {
     }
 }
 
+Write-Host "---- in BuildModules, step 7"
+
 $TargetModule = $TargetModule | Select-Object -Unique
 $testModule = $testModule | Select-Object -Unique
+
+Write-Host "---- in BuildModules, step 8"
 
 # Prepare autorest based modules
 $prepareScriptPath = Join-Path $toolDirectory 'BuildScripts' 'PrepareAutorestModule.ps1'
 
+Write-Host "---- in BuildModules, step 9"
+
 $isInvokedByPipeline = $false
 if ($InvokedByPipeline) {
+    Write-Host "---- in BuildModules, step 10"
     $isInvokedByPipeline = $true
     $outputTargetPath = Join-Path $RepoArtifacts "TargetModule.txt"
     New-Item -Path $outputTargetPath -Force
     $TargetModule | Out-File -Path $outputTargetPath -Force
+    Write-Host "---- in BuildModules, step 11"
 }
+Write-Host "---- in BuildModules, step 12"
 foreach ($moduleRootName in $TargetModule) {
+    Write-Host "---- in BuildModules, step 13"
     Write-Host "Preparing $moduleRootName ..." -ForegroundColor DarkGreen
     & $prepareScriptPath -ModuleRootName $moduleRootName -RepoRoot $RepoRoot -ForceRegenerate:$ForceRegenerate -InvokedByPipeline:$isInvokedByPipeline
+    Write-Host "---- in BuildModules, step 14"
 }
+Write-Host "---- in BuildModules, step 15"
 
 $buildCsprojFiles = Get-CsprojFromModule -BuildModuleList $TargetModule -RepoRoot $RepoRoot -Configuration $Configuration
+Write-Host "---- in BuildModules, step 16"
 
 Set-Location $RepoRoot
+Write-Host "---- in BuildModules, step 17"
 $buildSln = Join-Path $RepoArtifacts "Azure.PowerShell.sln"
+Write-Host "---- in BuildModules, step 18"
 
 & dotnet --version
+Write-Host "---- in BuildModules, step 19"
 if (Test-Path $buildSln) {
     Remove-Item $buildSln -Force
 }

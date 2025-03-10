@@ -174,11 +174,14 @@ Write-Host "---- in BuildModules, step 19"
 if (Test-Path $buildSln) {
     Remove-Item $buildSln -Force
 }
+Write-Host "---- in BuildModules, step 20"
 & dotnet new sln -n Azure.PowerShell -o $RepoArtifacts --force
-
+Write-Host "---- in BuildModules, step 21"
 foreach ($file in $buildCsprojFiles) {
+    Write-Host "---- in BuildModules, step 22 ---- $file"
     & dotnet sln $buildSln add "$file"
 }
+Write-Host "---- in BuildModules, step 23"
 Write-Output "Modules are added to build sln file"
 
 $LogFile = Join-Path $RepoArtifacts 'Build.log'

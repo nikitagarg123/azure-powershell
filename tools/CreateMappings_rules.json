@@ -951,5 +951,9 @@
   {
     "module": "DeviceRegistry",
     "alias": "DeviceRegistry"
+  },
+  {
+    "module": "IoTOperationsService",
+    "alias": "IoTOperationsService"
   }
 ]

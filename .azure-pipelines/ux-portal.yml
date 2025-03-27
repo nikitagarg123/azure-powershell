@@ -28,5 +28,7 @@ jobs:
       azureSubscription: 'azureps-infra-sp'
       ScriptType: InlineScript
       workingDirectory: artifacts
+      azurePowerShellVersion: LatestVersion
+      pwsh: true
       Inline: |
         $context = New-AzStorageContext -StorageAccountName "$(StorageAccountName)"

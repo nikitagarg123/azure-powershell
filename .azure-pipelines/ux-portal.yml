@@ -33,11 +33,11 @@ jobs:
         If ("${{ parameters.IsLatestVersion }}" -eq "True")
         {
           Copy-Item "UX.zip" -Destination "azps-latest.zip"
-          Set-AzStorageBlobContent -Container $(StorageBlobContainerName) -Context $context -File "azps-latest.zip" -Blob "$(StorageBlobFolder)/azps-latest.zip" -Force
+          #Set-AzStorageBlobContent -Container $(StorageBlobContainerName) -Context $context -File "azps-latest.zip" -Blob "$(StorageBlobFolder)/azps-latest.zip" -Force
         }
         $zipFile = "${{ parameters.AzurePowerShellVersion }}.zip"
         Move-Item "UX.zip" -Destination $zipFile
-        Set-AzStorageBlobContent -Container $(StorageBlobContainerName) -Context $context -File $zipFile -Blob "$(StorageBlobFolder)/$zipFile" -Force
+        #Set-AzStorageBlobContent -Container $(StorageBlobContainerName) -Context $context -File $zipFile -Blob "$(StorageBlobFolder)/$zipFile" -Force
       azurePowerShellVersion: LatestVersion
       pwsh: true
   - template: util/publish-artifacts-steps.yml

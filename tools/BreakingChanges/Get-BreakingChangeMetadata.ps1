@@ -394,7 +394,7 @@ Function Get-BreakingChangeOfGeneratedModule
                 })
             }
             Else {
-                $AllBreakingChangeMessages[$CmdletName][$AllParameterSetsName].Add('ParameterBreakingChange', $ParameterBreakingChangeMessage)
+                $AllBreakingChangeMessages[$CmdletName][$AllParameterSetsName]["ParameterBreakingChange"].Add($ParameterBreakingChangeMessage)
             }
         }
     }

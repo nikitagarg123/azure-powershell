@@ -66,7 +66,9 @@ Function Export-AllBreakingChangeMessageUnderArtifacts
         Write-Host "Generating breaking change message for $ModuleName"
         if ($ModuleName -ne "Az.Monitor")
         {
+			Write-Host "-----------Before Export-BreakingChangeMessageOfModule ModuleName = $ModuleName; ArtifactsPath = $ArtifactsPath"
             $Result += Export-BreakingChangeMessageOfModule -ArtifactsPath $ArtifactsPath -ModuleName $ModuleName
+			Write-Host "-----------After Export-BreakingChangeMessageOfModule $ModuleName"
         }
 
     }

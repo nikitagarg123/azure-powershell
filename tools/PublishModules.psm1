@@ -473,10 +473,6 @@ function Save-PackageLocally {
     $ModuleName = $module['ModuleName']
     $RequiredVersion = $module['RequiredVersion']
 
-    $AccessTokenSecureString = $env:SYSTEM_ACCESS_TOKEN | ConvertTo-SecureString -AsPlainText -Force
-    $credentialsObject = [pscredential]::new("ONEBRANCH_TOKEN", $AccessTokenSecureString)
-
-
     # Only check for the modules that specifies = required exact dependency version
     if ($RequiredVersion -ne $null) {
         Write-Output "Checking for required module $ModuleName, $RequiredVersion"

@@ -289,7 +289,7 @@ Function Get-BreakingChangeOfGeneratedModule
                     })
                 }
                 Else {
-                    $AllBreakingChangeMessages[$CmdletName][$ParameterSetName].Add($BreakingChangeMessage)
+                    $AllBreakingChangeMessages[$CmdletName][$ParameterSetName]["CmdletBreakingChange"].Add($BreakingChangeMessage)
                 }
             }
         }
@@ -363,7 +363,7 @@ Function Get-BreakingChangeOfGeneratedModule
                 })
             }
             Else {
-                $AllBreakingChangeMessages[$CmdletName][$AllParameterSetsName].Add($BreakingChangeMessage)
+                $AllBreakingChangeMessages[$CmdletName][$AllParameterSetsName]["CmdletBreakingChange"].Add($BreakingChangeMessage)
             }
         }
     }

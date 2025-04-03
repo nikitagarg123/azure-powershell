@@ -1,3 +1,18 @@
+## 13.5.0 - May 2025
+#### Az.Compute 9.3.0
+* Added new parameters 'ZonePlacementPolicy', 'IncludeZone', 'ExcludeZone', and 'AlignRegionalDisksToVMZone' to cmdlets 'New-AzVM' and 'New-AzVmConfig'
+* Added new parameter 'AlignRegionalDisksToVMZone' to cmdlet 'Update-AzVM'.
+* VM/VMSS related cmdlets will now use 2024-11-01 ComputeRP API calls.
+
+#### Az.DataFactory 1.19.2
+* Added more support for M365 connection properties.
+* Added more support for SnowfalkeV2 connection properties.
+
+#### Az.Network 7.16.0
+* Updated Add-AzNetworkInterfaceIpConfig and New-AzNetworkInterfaceIpConfig cmdlets to add new parameter PrivateIpAddressPrefixLength.
+    - 'Add-AzNetworkInterfaceIpConfig'
+    - 'New-AzNetworkInterfaceIpConfig'
+
 ## 13.4.0 - April 2025
 #### Az.Accounts 4.1.0
 * Added AppConfiguration ResourceId and Suffix endpoints for Mooncake and USGov clouds to fix issue [#24219]

@@ -12,7 +12,7 @@
 # RootModule = ''
 
 # Version number of this module.
-ModuleVersion = '13.4.0'
+ModuleVersion = '13.5.0'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core', 'Desktop'
@@ -84,8 +84,8 @@ RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '4.1.0'; },
             @{ModuleName = 'Az.CloudService'; RequiredVersion = '2.1.0'; }, 
             @{ModuleName = 'Az.CodeSigning'; RequiredVersion = '0.2.2'; }, 
             @{ModuleName = 'Az.CognitiveServices'; RequiredVersion = '1.16.0'; }, 
-            @{ModuleName = 'Az.Communication'; RequiredVersion = '0.4.2'; }, 
-            @{ModuleName = 'Az.Compute'; RequiredVersion = '9.2.0'; }, 
+            @{ModuleName = 'Az.Communication'; RequiredVersion = '0.5.0'; }, 
+            @{ModuleName = 'Az.Compute'; RequiredVersion = '9.3.0'; }, 
             @{ModuleName = 'Az.ComputeFleet'; RequiredVersion = '0.1.0'; }, 
             @{ModuleName = 'Az.ComputeSchedule'; RequiredVersion = '0.1.0'; }, 
             @{ModuleName = 'Az.ConfidentialLedger'; RequiredVersion = '1.1.0'; }, 
@@ -105,7 +105,7 @@ RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '4.1.0'; },
             @{ModuleName = 'Az.DataBoxEdge'; RequiredVersion = '1.2.1'; }, 
             @{ModuleName = 'Az.Databricks'; RequiredVersion = '1.10.0'; }, 
             @{ModuleName = 'Az.Datadog'; RequiredVersion = '0.1.2'; }, 
-            @{ModuleName = 'Az.DataFactory'; RequiredVersion = '1.19.1'; }, 
+            @{ModuleName = 'Az.DataFactory'; RequiredVersion = '1.19.2'; }, 
             @{ModuleName = 'Az.DataLakeAnalytics'; RequiredVersion = '1.1.0'; }, 
             @{ModuleName = 'Az.DataLakeStore'; RequiredVersion = '1.4.0'; }, 
             @{ModuleName = 'Az.DataMigration'; RequiredVersion = '0.14.10'; }, 

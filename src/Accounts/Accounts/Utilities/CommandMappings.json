@@ -1089,6 +1089,7 @@
     "Az.Communication": {
       "Get-AzCommunicationService": {},
       "Get-AzCommunicationServiceKey": {},
+      "Get-AzCommunicationServiceSmtpUsername": {},
       "Get-AzEmailService": {},
       "Get-AzEmailServicedataEmailSendResult": {},
       "Get-AzEmailServiceDomain": {},
@@ -1096,10 +1097,12 @@
       "Invoke-AzEmailServiceInitiateDomainVerification": {},
       "New-AzCommunicationService": {},
       "New-AzCommunicationServiceKey": {},
+      "New-AzCommunicationServiceSmtpUsername": {},
       "New-AzEmailService": {},
       "New-AzEmailServiceDomain": {},
       "New-AzEmailServiceSenderUsername": {},
       "Remove-AzCommunicationService": {},
+      "Remove-AzCommunicationServiceSmtpUsername": {},
       "Remove-AzEmailService": {},
       "Remove-AzEmailServiceDomain": {},
       "Remove-AzEmailServiceSenderUsername": {},
@@ -1108,6 +1111,7 @@
       "Stop-AzEmailServiceDomainVerification": {},
       "Test-AzCommunicationServiceNameAvailability": {},
       "Update-AzCommunicationService": {},
+      "Update-AzCommunicationServiceSmtpUsername": {},
       "Update-AzEmailService": {},
       "Update-AzEmailServiceDomain": {},
       "Update-AzEmailServiceSenderUsername": {}
@@ -5826,7 +5830,8 @@
       "Remove-AzOrbitalSpacecraft": {},
       "Remove-AzOrbitalSpacecraftContact": {},
       "Update-AzOrbitalContactProfile": {},
-      "Update-AzOrbitalSpacecraft": {}
+      "Update-AzOrbitalSpacecraft": {},
+      "Update-AzOrbitalSpacecraftContact": {}
     },
     "Az.PaloAltoNetworks": {
       "Get-AzPaloAltoNetworksCertificateObjectLocalRulestack": {},
